@@ -2,70 +2,71 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Flames</title>
+    <meta charset="UTF-8">
+    <title>Flames</title>
 </head>
 
 <body>
 
-  <div class="wrapper">
-    <div class="input_area">
-      <form action="">
-        <div class="input_item">
-          <label for="your_name">Your Name</label>
-          <input type="text" id="your_name" name="your_name">
+    <div class="wrapper">
+        <div class="input_area">
+            <form action="">
+                <div class="input_item">
+                    <label for="your_name">Your Name</label>
+                    <input type="text" id="your_name" name="your_name">
+                </div>
+                <div class="input_item">
+                    <label for="partner_name">Partners Name</label>
+                    <input type="text" id="partner_name" name="partner_name">
+                </div>
+                <div class="button_area">
+                    <button type="button" id="submit_button">Submit</button>
+                    <button type="button" id="clear_button">Clear</button>
+                </div>
+            </form>
         </div>
-        <div class="input_item">
-          <label for="partner_name">Partners Name</label>
-          <input type="text" id="partner_name" name="partner_name">
-        </div>
-        <div class="button_area">
-          <button type="button" id="submit_button">Submit</button>
-          <button type="button" id="clear_button">Clear</button>
-        </div>
-      </form>
-    </div>
-    <div class="output_area">
+        <div class="output_area">
 
+        </div>
     </div>
-  </div>
 
 </body>
 <script type="text/javascript">
-  var getYourName = document.getElementById('your_name');
-  var getPartnerName = document.getElementById('partner_name');
+    var getYourName = document.getElementById('your_name');
+    var getPartnerName = document.getElementById('partner_name');
 
-  var getSubmitButton = document.getElementById('submit_button');
-  var getClearButton = document.getElementById('clear_button');
+    var getSubmitButton = document.getElementById('submit_button');
+    var getClearButton = document.getElementById('clear_button');
 
-  var flames = ['F', 'L', 'A', 'M', 'E', 'S'];
+    var flames = ['F', 'L', 'A', 'M', 'E', 'S'];
 
-  getSubmitButton.addEventListener('click', function() {
-    var yourNameArr = getYourName.value.split('');
-    var yourPartnerArr = getPartnerName.value.split('');
+    getSubmitButton.addEventListener('click', function() {
+        var yourNameArr = getYourName.value.split('');
+        var yourPartnerArr = getPartnerName.value.split('');
 
-    var matchedArr = [];
-    for (var i = 0; i < yourNameArr.length; i++) {
-      for (var j = 0; j < yourPartnerArr.length; j++) {
-        if (yourNameArr[i] === yourPartnerArr[j]) {
-          matchedArr.push(yourNameArr[i]);
-          yourNameArr[i] = "#";
-          yourPartnerArr[j] = "$";
+        var matchedArr = [];
+        for (var i = 0; i < yourNameArr.length; i++) {
+            for (var j = 0; j < yourPartnerArr.length; j++) {
+                if (yourNameArr[i] === yourPartnerArr[j]) {
+                    matchedArr.push(yourNameArr[i]);
+                    yourNameArr[i] = "#";
+                    yourPartnerArr[j] = "$";
+                }
+            }
         }
-      }
-    }
 
-    var unmatchedItemL = yourNameArr.length + yourPartnerArr.length - (matchedArr.length * 2)
-    var pos = 0;
-    for (var k = 0; flames.length > 1; k++) {
-      flames.splice(unmatchedItemL.length%)
-    }
-  })
+        var unmatchedItemL = yourNameArr.length + yourPartnerArr.length - (matchedArr.length * 2)
+        var pos = 0;
+        for (var k = 0; flames.length > 1; k++) {
 
-  getClearButton.addEventListener('click', function() {
-    getYourName.value = "";
-    getPartnerName.value = "";
-  })
+        }
+    })
+
+    getClearButton.addEventListener('click', function() {
+        getYourName.value = "";
+        getPartnerName.value = "";
+    })
+
 </script>
 
 
